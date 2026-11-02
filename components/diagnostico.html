@@ -1,0 +1,86 @@
+<!-- ============================================================
+     CTA FINAL + FORMULÁRIO
+     ============================================================ -->
+<section class="section diag" id="diagnostico">
+  <div class="glow glow--volt" style="width:520px;height:520px;bottom:0;left:-14%;opacity:.08"></div>
+  <div class="container">
+    <p class="eyebrow">Diagnóstico gratuito</p>
+    <h2 data-split>Vamos <em class="serif serif--volt">conectar</em> sua marca a quem decide comprar?</h2>
+    <p class="lead">Preencha em 1 minuto. Respondemos em até 24h úteis com seu diagnóstico e os próximos passos.</p>
+
+    <div class="diag__grid">
+      <form class="form" id="diagForm" novalidate>
+        <div class="field">
+          <label for="f-nome">Nome <i>*</i></label>
+          <input type="text" id="f-nome" name="nome" autocomplete="name" placeholder="Como podemos te chamar?">
+          <span class="field__err" id="err-nome">Conta pra gente o seu nome.</span>
+        </div>
+        <div class="field">
+          <label for="f-empresa">Empresa <i>*</i></label>
+          <input type="text" id="f-empresa" name="empresa" autocomplete="organization" placeholder="Nome do seu negócio">
+          <span class="field__err" id="err-empresa">Qual é o nome da empresa?</span>
+        </div>
+        <div class="field">
+          <label for="f-wpp">WhatsApp <i>*</i></label>
+          <input type="tel" id="f-wpp" name="whatsapp" inputmode="tel" autocomplete="tel" placeholder="(00) 00000-0000">
+          <span class="field__err" id="err-wpp">Digite um WhatsApp válido com DDD.</span>
+        </div>
+        <div class="field">
+          <label for="f-insta">@ do Instagram ou site</label>
+          <input type="text" id="f-insta" name="instagram" placeholder="@suaempresa ou seusite.com.br">
+        </div>
+        <div class="field">
+          <label for="f-interesse">Interesse <i>*</i></label>
+          <select id="f-interesse" name="interesse">
+            <option value="" selected disabled>Selecione uma opção</option>
+            <option>Essential</option>
+            <option>Growth</option>
+            <option>Scale</option>
+            <option>Site/Landing Page</option>
+            <option>Identidade Visual</option>
+            <option>Google</option>
+            <option>Ainda não sei</option>
+          </select>
+          <span class="field__err" id="err-interesse">Escolha uma opção (pode ser “Ainda não sei”).</span>
+        </div>
+        <div class="field">
+          <label for="f-invest">Investimento mensal <i>*</i></label>
+          <select id="f-invest" name="investimento">
+            <option value="" selected disabled>Selecione uma faixa</option>
+            <option>Até R$ 2 mil</option>
+            <option>R$ 2–4 mil</option>
+            <option>R$ 4–8 mil</option>
+            <option>Acima de R$ 8 mil</option>
+          </select>
+          <span class="field__err" id="err-invest">Selecione uma faixa de investimento.</span>
+        </div>
+        <div class="form__foot">
+          <button type="submit" class="btn btn--volt" id="formSubmit" data-magnetic style="justify-content:center">Quero meu diagnóstico gratuito
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="form__micro">Sem spam. Sem compromisso. Seus dados ficam só com a gente.</p>
+        </div>
+        <div class="form__success" id="formSuccess" role="status" aria-live="polite">
+          <svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
+            <circle class="draw-circle" cx="40" cy="40" r="36" stroke="#C8FF2E" stroke-width="2.5"/>
+            <path class="draw-check" d="M26 41.5 36 51 55 30" stroke="#C8FF2E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>Recebemos!</h3>
+          <p>Já vamos analisar seu perfil. Abrimos o WhatsApp para você falar com a gente agora.</p>
+          <button type="button" class="form__again" id="formAgain">Enviar outro contato</button>
+        </div>
+      </form>
+
+      <!-- PLACEHOLDER: dados de contato fictícios; trocar pelos reais -->
+      <aside class="contact-card" data-placeholder="true">
+        <h3>Prefere falar direto?</h3>
+        <ul>
+          <li><a href="#" data-wpp-link target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 9.5c.5 2.5 3 5 5.5 5.5l1-1.5-2-1.5-1 .5c-.8-.5-1.5-1.2-2-2l.5-1-1.5-2L9 9.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>Chamar no WhatsApp</a></li>
+          <li><a href="mailto:contato@konexo.com.br"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="currentColor" stroke-width="1.5"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>contato@konexo.com.br</a></li>
+          <li><a href="https://instagram.com/konexo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg>@konexo</a></li>
+        </ul>
+        <small>Atendimento: seg–sex, 9h–18h. Respondemos em até 24h úteis.</small>
+      </aside>
+    </div>
+  </div>
+</section>

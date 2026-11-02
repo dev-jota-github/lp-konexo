@@ -1,0 +1,40 @@
+{
+  "team": [
+    {
+      "name": "Helena Prado",
+      "role": "Estratégia & Conteúdo",
+      "quote": "Plano bom é plano que cabe na rotina do cliente.",
+      "photoSlot": "foto-time-estrategia"
+    },
+    {
+      "name": "Diego Ramos",
+      "role": "Audiovisual & Design",
+      "quote": "Vídeo bonito que não vende é só vídeo bonito.",
+      "photoSlot": "foto-time-audiovisual"
+    },
+    {
+      "name": "Luiza Fontes",
+      "role": "Performance & Dados",
+      "quote": "Palpite não escala. Dado, sim.",
+      "photoSlot": "foto-time-performance"
+    }
+  ],
+  "values": [
+    {
+      "title": "Clareza",
+      "description": "Relatório que qualquer pessoa entende."
+    },
+    {
+      "title": "Prazo",
+      "description": "Entregamos no dia combinado."
+    },
+    {
+      "title": "Mensuração",
+      "description": "Cada ação tem número associado."
+    },
+    {
+      "title": "Honestidade",
+      "description": "Não vendemos o que não conseguimos entregar com segurança."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "cases": [
+    {
+      "id": 0,
+      "name": "Aura Odontologia",
+      "category": "Saúde",
+      "services": "Social + Meta Ads",
+      "metric": "Custo por lead de R$ 31 para <strong>R$ 14</strong> em 90 dias",
+      "previewClass": "cp-1",
+      "previewName": "Aura"
+    },
+    {
+      "id": 1,
+      "name": "Forno & Fogo",
+      "category": "Gastronomia",
+      "services": "Reels + Google",
+      "metric": "<strong>+68%</strong> de pedidos pelo WhatsApp",
+      "previewClass": "cp-2",
+      "previewName": "Forno & Fogo"
+    },
+    {
+      "id": 2,
+      "name": "Vértice Pilates",
+      "category": "Bem-estar",
+      "services": "Plano Growth",
+      "metric": "<strong>94</strong> novas matrículas em 4 meses",
+      "previewClass": "cp-3",
+      "previewName": "Vértice"
+    },
+    {
+      "id": 3,
+      "name": "Casa Lume Decor",
+      "category": "Varejo",
+      "services": "Landing Page",
+      "metric": "<strong>4,8%</strong> de conversão no lançamento",
+      "previewClass": "cp-4",
+      "previewName": "Casa Lume"
+    }
+  ],
+  "cta": {
+    "text": "Seu case pode ser o próximo.",
+    "buttonText": "Quero meu diagnóstico gratuito"
+  }
+}

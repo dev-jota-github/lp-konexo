@@ -1,0 +1,97 @@
+/* ============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================ */
+
+/* Eyebrow with pulsing dot */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.4rem;
+}
+
+.section--light .eyebrow {
+  color: var(--muted-ink);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--volt);
+  flex: none;
+  animation: pulse-dot 2s var(--ease) infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 255, 46, .5); }
+  50% { box-shadow: 0 0 0 7px rgba(200, 255, 46, 0); }
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: .96;
+  letter-spacing: -.04em;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--fs-hero); }
+h2 { font-size: var(--fs-h2); margin-bottom: 1.6rem; }
+h3 { font-size: var(--fs-h3); line-height: 1.05; }
+
+/* Serif accent */
+.serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -.01em;
+}
+
+.serif--volt { color: var(--volt); }
+.section--light .serif--volt { color: #6f9a00; }
+
+/* Lead text */
+.lead {
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.section--light .lead {
+  color: var(--muted-ink);
+}
+
+/* Reveal animations (JS-enhanced) */
+html.js [data-split] .w {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: .08em;
+  margin-bottom: -.08em;
+}
+
+html.js [data-split] .wi {
+  display: inline-block;
+  transform: translateY(115%);
+  will-change: transform;
+}
+
+html:not(.js) [data-split] {
+  opacity: 1;
+}
+
+html.js [data-fade] {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+html:not(.js) [data-fade] {
+  opacity: 1;
+}

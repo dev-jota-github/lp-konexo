@@ -1,0 +1,134 @@
+/* ============================================================
+   DEPOIMENTOS SECTION
+   ============================================================ */
+.depo {
+  overflow: hidden;
+}
+
+.depo__track {
+  display: flex;
+  gap: 1.4rem;
+  cursor: grab;
+  margin-top: 3rem;
+  padding-inline: var(--edge);
+  scroll-padding-inline: var(--edge);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y;
+}
+
+.depo__track::-webkit-scrollbar {
+  display: none;
+}
+
+.depo__track.is-drag {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  user-select: none;
+}
+
+.depo__card {
+  scroll-snap-align: start;
+}
+
+.depo__ctrl {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+
+.depo__btns {
+  display: flex;
+  gap: .6rem;
+}
+
+.depo__btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .3s, color .3s, border-color .3s;
+}
+
+.depo__btn:hover {
+  background: var(--volt);
+  color: var(--volt-ink);
+  border-color: var(--volt);
+}
+
+.depo__btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.depo__card {
+  flex: 0 0 min(560px, 86vw);
+  background: var(--ink-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.depo__quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -.015em;
+}
+
+.depo__who {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.depo__photo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  flex: none;
+  border: 1px dashed var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  background: radial-gradient(circle at 30% 30%, #26262c, #141416);
+  font-size: .65rem;
+  letter-spacing: .08em;
+}
+
+.depo__who b {
+  display: block;
+  font-size: .95rem;
+}
+
+.depo__who span {
+  color: var(--muted);
+  font-size: .82rem;
+}
+
+.depo__hint {
+  font-size: .8rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.depo__hint svg {
+  width: 16px;
+  height: 16px;
+}

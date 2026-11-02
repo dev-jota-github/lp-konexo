@@ -1,0 +1,36 @@
+/* ============================================================
+   MAIN CSS ENTRY POINT
+   Imports all modular CSS files in the correct order
+   ============================================================ */
+
+/* Base */
+@import './base/tokens.css';
+@import './base/reset.css';
+
+/* Components */
+@import './components/buttons.css';
+@import './components/preloader.css';
+@import './components/progress-cursor.css';
+@import './components/header.css';
+
+/* Sections */
+@import './sections/hero.css';
+@import './sections/prova.css';
+@import './sections/cenario.css';
+@import './sections/servicos.css';
+@import './sections/metodo.css';
+@import './sections/cases.css';
+@import './sections/numeros.css';
+@import './sections/planos.css';
+@import './sections/oferta.css';
+@import './sections/depoimentos.css';
+@import './sections/sobre.css';
+@import './sections/faq.css';
+@import './sections/diagnostico.css';
+@import './sections/footer.css';
+
+/* Utilities */
+@import './utilities/layout.css';
+@import './utilities/effects.css';
+@import './utilities/typography.css';
+@import './utilities/responsive.css';

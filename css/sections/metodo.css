@@ -1,0 +1,130 @@
+/* ============================================================
+   MÉTODO SECTION
+   ============================================================ */
+.metodo {
+  overflow: hidden;
+}
+
+.metodo__head {
+  margin-bottom: 3rem;
+}
+
+.metodo__head > * {
+  max-width: 720px;
+}
+
+.metodo__viewport {
+  position: relative;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  scroll-padding-inline: var(--edge);
+}
+
+.metodo__viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.metodo__viewport.is-drag {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  user-select: none;
+}
+
+.metodo__ctrl {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.metodo__ctrl .metodo__rail {
+  flex: 1;
+  margin-top: 0;
+}
+
+.metodo__track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  padding-inline: var(--edge);
+  will-change: transform;
+}
+
+.step {
+  position: relative;
+  width: min(400px, 82vw);
+  flex: none;
+  scroll-snap-align: start;
+  scroll-margin-left: var(--edge);
+  background: var(--ink-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2.4rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.step__num {
+  position: absolute;
+  top: -1.2rem;
+  right: .6rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 9rem;
+  line-height: 1;
+  letter-spacing: -.05em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--line);
+  pointer-events: none;
+}
+
+.step h3 {
+  font-size: 1.6rem;
+}
+
+.step p {
+  color: var(--muted);
+  font-size: .98rem;
+}
+
+.step__deliv {
+  margin-top: auto;
+  padding-top: 1.2rem;
+  border-top: 1px dashed var(--line);
+  font-size: .82rem;
+  color: var(--volt);
+  display: flex;
+  gap: .5rem;
+  align-items: baseline;
+}
+
+.step__deliv::before {
+  content: "→";
+}
+
+.metodo__rail {
+  position: relative;
+  height: 2px;
+  margin-top: 2rem;
+  pointer-events: none;
+}
+
+.metodo__rail i {
+  position: absolute;
+  inset: 0;
+  background: var(--line);
+}
+
+.metodo__rail b {
+  position: absolute;
+  inset: 0;
+  background: var(--volt);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+}

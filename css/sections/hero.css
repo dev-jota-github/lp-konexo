@@ -1,0 +1,329 @@
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 5.5rem;
+  overflow: hidden;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  margin-bottom: 1.6rem;
+}
+
+.hero__sub {
+  color: var(--muted);
+  max-width: 52ch;
+  margin-bottom: 2.2rem;
+}
+
+.hero__ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.8rem;
+}
+
+.hero__proof {
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.hero__proof li {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+.hero__proof svg {
+  width: 16px;
+  height: 16px;
+  color: var(--volt);
+  flex: none;
+}
+
+/* Hero stage: floating cards + connection lines */
+.hero__stage {
+  position: relative;
+  height: clamp(440px, 64vh, 560px);
+}
+
+.hero__lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.hero__lines path {
+  stroke: var(--line);
+  stroke-width: 1;
+  fill: none;
+}
+
+.hero__lines .live {
+  stroke: var(--volt);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 8;
+  animation: line-flow 1.4s linear infinite;
+}
+
+@keyframes line-flow {
+  to { stroke-dashoffset: -14; }
+}
+
+.node {
+  fill: var(--volt);
+}
+
+/* Floating cards */
+.fcard {
+  position: absolute;
+  background: var(--ink-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem 1.2rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .45);
+  will-change: transform;
+}
+
+.fcard__label {
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: .45rem;
+}
+
+/* Phone card */
+.fcard--phone {
+  top: 2%;
+  right: 6%;
+  width: 216px;
+  padding: .7rem;
+  border-radius: 26px;
+}
+
+.phone {
+  border-radius: 20px;
+  background: var(--ink);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.phone__bar {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .6rem .8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.phone__avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--volt), var(--violet));
+  flex: none;
+}
+
+.phone__name {
+  font-size: .68rem;
+  font-weight: 600;
+}
+
+.phone__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  padding: 2px;
+}
+
+.phone__grid i {
+  aspect-ratio: 1;
+  border-radius: 4px;
+  display: block;
+}
+
+.phone__grid i:nth-child(1) { background: linear-gradient(135deg, #2a2a30, #1c1c20); }
+.phone__grid i:nth-child(2) { background: linear-gradient(135deg, rgba(200, 255, 46, .85), rgba(124, 92, 255, .6)); }
+.phone__grid i:nth-child(3) { background: linear-gradient(135deg, #3a3a42, #26262b); }
+.phone__grid i:nth-child(4) { background: linear-gradient(135deg, rgba(124, 92, 255, .7), #1c1c20); }
+.phone__grid i:nth-child(5) { background: linear-gradient(135deg, #26262b, #141416); }
+.phone__grid i:nth-child(6) { background: linear-gradient(135deg, rgba(200, 255, 46, .55), #22221a); }
+.phone__grid i:nth-child(7) { background: linear-gradient(135deg, #2e2e35, #1a1a1e); }
+.phone__grid i:nth-child(8) { background: linear-gradient(135deg, #202024, rgba(200, 255, 46, .4)); }
+.phone__grid i:nth-child(9) { background: linear-gradient(135deg, #34343c, #1e1e22); }
+
+/* Metric card */
+.fcard--metric {
+  top: 34%;
+  left: 0;
+  width: 230px;
+}
+
+.fcard--metric strong {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: -.03em;
+  color: var(--volt);
+}
+
+.spark {
+  margin-top: .6rem;
+}
+
+.spark polyline {
+  fill: none;
+  stroke: var(--volt);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.spark .area {
+  fill: url(#sparkfill);
+  stroke: none;
+  opacity: .5;
+}
+
+/* Maps card */
+.fcard--maps {
+  bottom: 20%;
+  right: 0;
+  width: 210px;
+}
+
+.fcard--maps .stars {
+  color: var(--volt);
+  letter-spacing: .15em;
+  font-size: .85rem;
+}
+
+.fcard--maps strong {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+}
+
+.pin-row {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  color: var(--muted);
+  font-size: .8rem;
+  margin-top: .4rem;
+}
+
+.pin-row svg {
+  width: 14px;
+  height: 14px;
+  color: var(--volt);
+}
+
+/* Reel card */
+.fcard--reel {
+  bottom: 0;
+  left: 12%;
+  width: 250px;
+}
+
+.reel-status {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+.reel-check {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(200, 255, 46, .14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.reel-check svg {
+  width: 13px;
+  height: 13px;
+  color: var(--volt);
+}
+
+.reel-status p {
+  font-size: .85rem;
+  line-height: 1.4;
+}
+
+.reel-status em {
+  display: block;
+  font-style: normal;
+  color: var(--muted);
+  font-size: .75rem;
+  margin-top: .15rem;
+}
+
+/* Marquee */
+.marquee {
+  border-block: 1px solid var(--line);
+  padding-block: 1.1rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  margin-top: 4rem;
+}
+
+.marquee__track {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee__track span {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.marquee__track i {
+  font-style: normal;
+  color: var(--volt);
+}
+
+@keyframes marquee-scroll {
+  to { transform: translateX(-50%); }
+}
+
+.marquee__track {
+  animation: marquee-scroll 28s linear infinite;
+}
+
+.marquee--reverse .marquee__track {
+  animation-direction: reverse;
+}

@@ -1,0 +1,144 @@
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  border-top: 1px solid var(--line);
+  padding-top: 4rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.footer__cols {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  padding-bottom: 4rem;
+}
+
+.footer__col h4 {
+  font-size: .78rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+.footer__col ul {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
+
+.footer__col a {
+  color: var(--muted);
+  font-size: .95rem;
+  transition: color .25s;
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+}
+
+.footer__col a:hover {
+  color: var(--volt);
+}
+
+.footer__brand p {
+  color: var(--muted);
+  font-size: .9rem;
+  max-width: 30ch;
+  margin-top: 1rem;
+}
+
+.footer__word {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(4.5rem, 17.5vw, 17rem);
+  line-height: .8;
+  letter-spacing: -.05em;
+  text-align: center;
+  color: var(--ink-3);
+  transform: translateY(18%);
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.footer__base {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--line);
+  padding-block: 1.4rem;
+  font-size: .82rem;
+  color: var(--muted);
+}
+
+.totop {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  color: var(--muted);
+  transition: color .25s;
+  min-height: 44px;
+}
+
+.totop:hover {
+  color: var(--volt);
+}
+
+.totop svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ============================================================
+   WHATSAPP FLOATING BUTTON
+   ============================================================ */
+.wpp-float {
+  position: fixed;
+  right: 1.4rem;
+  bottom: 1.4rem;
+  z-index: 1500;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--volt);
+  color: var(--volt-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 32px rgba(200, 255, 46, .28);
+  transform: scale(0);
+  transition: transform .45s var(--ease), background .3s;
+}
+
+.wpp-float.is-on {
+  transform: scale(1);
+}
+
+.wpp-float:hover {
+  background: #d9ff5c;
+  transform: scale(1.08) !important;
+}
+
+.wpp-float svg {
+  width: 26px;
+  height: 26px;
+}
+
+.wpp-float::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--volt);
+  animation: wpp-pulse 2.4s var(--ease) infinite;
+}
+
+@keyframes wpp-pulse {
+  0% { transform: scale(1); opacity: .8; }
+  100% { transform: scale(1.65); opacity: 0; }
+}

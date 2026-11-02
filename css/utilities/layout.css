@@ -1,0 +1,34 @@
+/* ============================================================
+   LAYOUT UTILITIES
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+main > section,
+.footer {
+  overflow-x: clip;
+}
+
+.container > *,
+[class*="__grid"] > *,
+.hero__grid > * {
+  min-width: 0;
+}
+
+.section {
+  padding-block: var(--section-y);
+  position: relative;
+}
+
+.section--alt {
+  background: var(--ink-2);
+}
+
+.section--light {
+  background: var(--bone);
+  color: var(--ink);
+}

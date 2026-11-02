@@ -1,0 +1,64 @@
+{
+  "plans": [
+    {
+      "id": "essential",
+      "name": "Essential",
+      "description": "Para quem está começando a organizar a presença",
+      "price": "R$ 1.790",
+      "period": "a partir de · por mês",
+      "featured": false,
+      "features": [
+        { "text": "8 posts + 8 stories adaptados", "included": true },
+        { "text": "4 reels por mês", "included": true },
+        { "text": "4h de captação audiovisual", "included": true },
+        { "text": "Planejamento · Copy · Agendamento · Meta Ads", "included": false }
+      ],
+      "ctaText": "Quero o Essential"
+    },
+    {
+      "id": "growth",
+      "name": "Growth",
+      "description": "Para quem quer crescer com consistência",
+      "price": "R$ 2.690",
+      "period": "a partir de · por mês",
+      "featured": true,
+      "badge": "Mais escolhido",
+      "features": [
+        { "text": "12 posts + 12 stories adaptados", "included": true },
+        { "text": "6 reels por mês", "included": true },
+        { "text": "8h de captação audiovisual", "included": true },
+        { "text": "Planejamento · Copy · Agendamento · Meta Ads", "included": false }
+      ],
+      "ctaText": "Quero o Growth"
+    },
+    {
+      "id": "scale",
+      "name": "Scale",
+      "description": "Para quem quer dominar o mercado local",
+      "price": "R$ 3.890",
+      "period": "a partir de · por mês",
+      "featured": false,
+      "features": [
+        { "text": "16 posts + 16 stories adaptados", "included": true },
+        { "text": "8 reels por mês", "included": true },
+        { "text": "16h de captação audiovisual", "included": true },
+        { "text": "Planejamento · Copy · Agendamento · Meta Ads", "included": false }
+      ],
+      "ctaText": "Quero o Scale"
+    }
+  ],
+  "modules": [
+    { "name": "Landing Page", "price": "a partir de R$ 1.500" },
+    { "name": "Site institucional", "price": "a partir de R$ 3.000" },
+    { "name": "Identidade visual", "price": "a partir de R$ 800" },
+    { "name": "Gestão de tráfego avulsa", "price": "a partir de R$ 400/mês" },
+    { "name": "Google Meu Negócio", "price": "sob consulta" }
+  ],
+  "combos": [
+    "Growth + Site",
+    "Scale + Identidade Visual",
+    "Essential + Google",
+    "Growth + Landing Page"
+  ],
+  "note": "Valores de referência. A proposta final é personalizada após o diagnóstico. Verba de mídia não inclusa."
+}

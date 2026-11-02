@@ -1,0 +1,135 @@
+/* ============================================================
+   SERVIÇOS (BENTO GRID)
+   ============================================================ */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.2rem;
+  margin-top: 3rem;
+}
+
+.bento__card {
+  grid-column: span 2;
+  background: var(--ink-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: border-color .35s, transform .45s var(--ease);
+}
+
+.bento__card:nth-child(1) { grid-column: span 4; }
+.bento__card:nth-child(2) { grid-column: span 2; }
+.bento__card:nth-child(4) { grid-column: span 4; }
+.bento__card:nth-child(5),
+.bento__card:nth-child(6) { grid-column: span 3; }
+
+.bento__card:hover {
+  border-color: rgba(200, 255, 46, .5);
+  transform: translateY(-4px);
+}
+
+.bento__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), rgba(200, 255, 46, .09), transparent 65%);
+  opacity: 0;
+  transition: opacity .4s;
+}
+
+.bento__card:hover::before {
+  opacity: 1;
+}
+
+.bento__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--volt);
+  flex: none;
+}
+
+.bento__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.bento__card h3 {
+  font-size: 1.35rem;
+  margin-top: .2rem;
+}
+
+.bento__card p {
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.bento__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: auto;
+  padding-top: .6rem;
+}
+
+.bento__tags li {
+  font-size: .72rem;
+  letter-spacing: .06em;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: .28rem .7rem;
+}
+
+.bento__arrow {
+  position: absolute;
+  top: 1.4rem;
+  right: 1.4rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  transition: background .3s, color .3s, transform .35s var(--ease);
+}
+
+.bento__arrow svg {
+  width: 15px;
+  height: 15px;
+}
+
+.bento__card:hover .bento__arrow {
+  background: var(--volt);
+  color: var(--volt-ink);
+  transform: rotate(45deg);
+}
+
+.servicos__foot {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--line);
+  padding-top: 2.5rem;
+}
+
+.servicos__foot p {
+  color: var(--muted);
+  max-width: 46ch;
+}

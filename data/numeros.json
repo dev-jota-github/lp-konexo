@@ -1,0 +1,8 @@
+{
+  "numeros": [
+    { "count": 120, "suffix": "+", "label": "conteúdos produzidos por mês" },
+    { "count": 48, "suffix": "h", "label": "para primeira resposta" },
+    { "count": 100, "suffix": "%", "label": "do mês agendado antecipadamente" },
+    { "count": 1, "suffix": "x por mês", "label": "relatório com plano do próximo ciclo" }
+  ]
+}

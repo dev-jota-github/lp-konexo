@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konexo | Agência de Marketing e Presença Digital para Pequenas e Médias Empresas</title>
+  <meta name="description" content="Estratégia, conteúdo, vídeo, design e Meta Ads para transformar sua presença digital em clientes. Peça seu diagnóstico gratuito com a Konexo.">
+  <meta name="theme-color" content="#0A0A0B">
+  <meta property="og:title" content="Konexo | Conecte sua marca a quem decide comprar">
+  <meta property="og:description" content="Marketing com método, prazo e números claros. Diagnóstico gratuito.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Favicon: "x"-nó da marca em SVG inline -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0A0B'/%3E%3Cpath d='M20 20 L44 44 M44 20 L20 44' stroke='%23C8FF2E' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23C8FF2E'/%3E%3C/svg%3E">
+
+  <!-- Progressive enhancement: marca que JS está disponível antes de qualquer pintura -->
+  <script>document.documentElement.classList.replace('no-js','js');</script>
+
+  <!-- Fontes (única dependência de tipografia) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400..600&display=swap" rel="stylesheet">
+
+  <!-- Dados estruturados: ProfessionalService -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Konexo",
+    "description": "Agência de marketing, conteúdo e presença digital para pequenas e médias empresas. Estratégia, conteúdo, vídeo, design e Meta Ads com método, prazo e números claros.",
+    "email": "contato@konexo.com.br",
+    "areaServed": "BR",
+    "sameAs": ["https://instagram.com/konexo"],
+    "priceRange": "R$ 1.790 - R$ 3.890/mês"
+  }
+  </script>
+
+  <!-- Dados estruturados: FAQPage (will be populated from data/faq.json) -->
+  <script type="application/ld+json" id="faqSchema"></script>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#hero">Pular para o conteúdo</a>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <svg class="preloader__logo" viewBox="0 0 64 64" fill="none" role="img" aria-label="Konexo">
+      <path class="draw" d="M18 18 L46 46" stroke="#C8FF2E" stroke-width="4" stroke-linecap="round"/>
+      <path class="draw" d="M46 18 L18 46" stroke="#C8FF2E" stroke-width="4" stroke-linecap="round"/>
+      <circle class="draw" cx="32" cy="32" r="10" stroke="#F4F1EA" stroke-width="2"/>
+    </svg>
+    <p class="preloader__tag">Conectando sua marca</p>
+    <p class="preloader__count" id="preCount">0</p>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header id="header"></header>
+
+  <main id="conteudo">
+    <!-- ============ HERO ============ -->
+    <section id="hero"></section>
+
+    <!-- ============ PROVA ============ -->
+    <section id="prova"></section>
+
+    <!-- ============ CENÁRIO ============ -->
+    <section id="cenario"></section>
+
+    <!-- ============ SERVIÇOS ============ -->
+    <section id="servicos"></section>
+
+    <!-- ============ MÉTODO ============ -->
+    <section id="metodo"></section>
+
+    <!-- ============ CASES ============ -->
+    <section id="cases"></section>
+
+    <!-- ============ NÚMEROS ============ -->
+    <section id="numeros"></section>
+
+    <!-- ============ PLANOS ============ -->
+    <section id="planos"></section>
+
+    <!-- ============ OFERTA ============ -->
+    <section id="oferta"></section>
+
+    <!-- ============ DEPOIMENTOS ============ -->
+    <section id="depoimentos"></section>
+
+    <!-- ============ SOBRE ============ -->
+    <section id="sobre"></section>
+
+    <!-- ============ FAQ ============ -->
+    <section id="faq"></section>
+
+    <!-- ============ DIAGNÓSTICO ============ -->
+    <section id="diagnostico"></section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="footer"></footer>
+
+  <!-- CDNs (versões fixas, conforme especificação) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Main JS (ES Module) -->
+  <script type="module" src="js/main.js"></script>
+
+  <!-- Compensação do header fixo nas âncoras -->
+  <style>[id]{scroll-margin-top:96px}</style>
+</body>
+</html>

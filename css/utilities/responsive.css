@@ -1,0 +1,233 @@
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+@media (max-width: 1200px) {
+  .hero__grid {
+    grid-template-columns: 1fr .9fr;
+  }
+  .numeros__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer__cols {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .header__nav,
+  .header__cta {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+  .hero {
+    padding-top: 8rem;
+  }
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .hero__stage {
+    height: 520px;
+    max-width: 420px;
+    margin-inline: auto;
+    width: 100%;
+  }
+  .cenario__grid {
+    grid-template-columns: 1fr;
+  }
+  .cenario__sticky {
+    position: static;
+  }
+  .bento {
+    grid-template-columns: 1fr 1fr;
+  }
+  .bento__card,
+  .bento__card:nth-child(1),
+  .bento__card:nth-child(2),
+  .bento__card:nth-child(4),
+  .bento__card:nth-child(5),
+  .bento__card:nth-child(6) {
+    grid-column: auto;
+  }
+  .planos__grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+  .oferta__cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sobre__grid {
+    grid-template-columns: 1fr;
+  }
+  .valores {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.6rem;
+  }
+  .diag__grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-card {
+    position: static;
+  }
+  .case-preview {
+    display: none;
+  }
+  .case-row {
+    grid-template-columns: auto 1fr auto;
+    gap: .5rem 1rem;
+    padding: 1.4rem .4rem;
+    align-items: center;
+  }
+  .case-row__name {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+  .case-row__go {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+  }
+  .case-row__name + .case-row__meta {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .case-row__meta + .case-row__meta {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .case-row__metric {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    max-width: none;
+  }
+  /* Método: vira lista vertical */
+  .step {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .metodo__viewport {
+    overflow: visible;
+    cursor: default;
+    scroll-snap-type: none;
+  }
+  .metodo__track {
+    flex-direction: column;
+    width: auto;
+    gap: 1rem;
+    padding-inline: var(--gutter);
+  }
+  .step {
+    width: 100%;
+    padding: 1.5rem 1.4rem;
+    gap: .55rem;
+    scroll-snap-align: none;
+  }
+  .step__num {
+    font-size: 4.5rem;
+    top: .4rem;
+    right: 1rem;
+  }
+  .step h3 {
+    font-size: 1.3rem;
+    padding-right: 4rem;
+  }
+  .step p {
+    font-size: .95rem;
+    line-height: 1.55;
+  }
+  .step__deliv {
+    padding-top: .8rem;
+    margin-top: .4rem;
+  }
+  .metodo__ctrl {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .bento {
+    grid-template-columns: 1fr;
+  }
+  .numeros__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .num {
+    padding: 1.6rem 1.3rem;
+  }
+  .oferta__cards {
+    grid-template-columns: 1fr;
+  }
+  .form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hero__stage {
+    height: 480px;
+  }
+  .fcard--phone {
+    right: 0;
+    width: 190px;
+  }
+  .fcard--metric {
+    width: 200px;
+  }
+  .fcard--maps {
+    width: 190px;
+    right: 2%;
+  }
+  .fcard--reel {
+    left: 0;
+    width: 230px;
+  }
+  .footer__cols {
+    grid-template-columns: 1fr;
+  }
+  .hero__proof {
+    flex-direction: column;
+    gap: .7rem;
+  }
+  .wpp-float {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .grain {
+    animation: none;
+  }
+  .marquee__track {
+    animation-duration: 80s;
+  }
+  html.js [data-fade] {
+    opacity: 1;
+    transform: none;
+  }
+  html.js [data-split] .wi {
+    transform: none;
+  }
+  .cursor {
+    display: none;
+  }
+  .preloader {
+    display: none;
+  }
+}

@@ -1,0 +1,194 @@
+/* ============================================================
+   PLANOS SECTION
+   ============================================================ */
+.planos .lead {
+  margin-bottom: 3rem;
+}
+
+.planos__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+  align-items: stretch;
+}
+
+.plan {
+  background: #fff;
+  border: 1px solid rgba(10, 10, 11, .1);
+  border-radius: var(--radius);
+  padding: 2.4rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  position: relative;
+  transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+}
+
+.plan:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 60px rgba(10, 10, 11, .12);
+}
+
+.plan--featured {
+  background: var(--ink);
+  color: var(--bone);
+  border-color: var(--ink);
+}
+
+.plan__badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--volt);
+  color: var(--volt-ink);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .4rem 1rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.plan__for {
+  font-size: .85rem;
+  color: var(--muted-ink);
+}
+
+.plan--featured .plan__for {
+  color: var(--muted);
+}
+
+.plan__price {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 3vw, 2.7rem);
+  letter-spacing: -.04em;
+  line-height: 1;
+}
+
+.plan__price small {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: .82rem;
+  color: var(--muted-ink);
+  letter-spacing: 0;
+  margin-top: .4rem;
+}
+
+.plan--featured .plan__price small {
+  color: var(--muted);
+}
+
+.plan__list {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  margin-block: .6rem;
+  flex: 1;
+}
+
+.plan__list li {
+  display: flex;
+  gap: .6rem;
+  align-items: baseline;
+  font-size: .95rem;
+}
+
+.plan__list li svg {
+  width: 14px;
+  height: 14px;
+  color: #6f9a00;
+  flex: none;
+  transform: translateY(2px);
+}
+
+.plan--featured .plan__list li svg {
+  color: var(--volt);
+}
+
+.plan__list li.muted {
+  color: var(--muted-ink);
+}
+
+.plan--featured .plan__list li.muted {
+  color: var(--muted);
+}
+
+.plan .btn {
+  justify-content: center;
+}
+
+/* Módulos */
+.modulos {
+  margin-top: 4rem;
+}
+
+.modulos h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+.modulos h3::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(10, 10, 11, .15);
+}
+
+.modulos__row {
+  display: flex;
+  gap: .9rem;
+  flex-wrap: wrap;
+}
+
+.modulo {
+  border: 1px solid rgba(10, 10, 11, .18);
+  border-radius: 999px;
+  padding: .7rem 1.3rem;
+  font-size: .9rem;
+  display: flex;
+  gap: .6rem;
+  align-items: baseline;
+  background: transparent;
+  transition: all .3s;
+}
+
+.modulo b {
+  font-weight: 600;
+}
+
+.modulo i {
+  font-style: normal;
+  color: var(--muted-ink);
+  font-size: .8rem;
+}
+
+.modulo:hover {
+  border-color: var(--ink);
+  transform: translateY(-2px);
+}
+
+.combos {
+  margin-top: 1.6rem;
+  font-size: .9rem;
+  color: var(--muted-ink);
+}
+
+.combos b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.planos__note {
+  margin-top: 2.6rem;
+  font-size: .85rem;
+  color: var(--muted-ink);
+  border-top: 1px solid rgba(10, 10, 11, .12);
+  padding-top: 1.4rem;
+}

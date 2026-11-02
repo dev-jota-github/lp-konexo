@@ -1,0 +1,37 @@
+/* ============================================================
+   PROVA (LOGO STRIP)
+   ============================================================ */
+.prova {
+  padding-block: 3.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.prova p {
+  text-align: center;
+  font-size: var(--fs-small);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.prova__logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 4.5rem);
+  flex-wrap: wrap;
+}
+
+.prova__logos svg {
+  height: 26px;
+  width: auto;
+  color: var(--muted);
+  opacity: .75;
+  transition: color .3s, opacity .3s;
+}
+
+.prova__logos svg:hover {
+  color: var(--bone);
+  opacity: 1;
+}

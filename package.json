@@ -1,0 +1,19 @@
+{
+  "name": "konexo-landing-page",
+  "version": "1.0.0",
+  "description": "Konexo - Agência de Marketing e Presença Digital",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint js/**/*.js"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0",
+    "eslint": "^8.57.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

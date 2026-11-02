@@ -1,0 +1,36 @@
+{
+  "faq": [
+    {
+      "question": "Quanto custa trabalhar com a Konexo?",
+      "answer": "Os planos de social media começam em R$ 1.790/mês. Sites, landing pages, identidade visual e outros módulos têm valores à parte. Depois do diagnóstico, enviamos uma proposta personalizada."
+    },
+    {
+      "question": "A verba dos anúncios está inclusa?",
+      "answer": "Não. A verba de mídia é separada e vai direto para a plataforma (Meta), sob seu controle. Nós cuidamos da gestão e otimização."
+    },
+    {
+      "question": "Em quanto tempo vejo resultado?",
+      "answer": "Organização e presença melhoram já no primeiro mês. Resultados de captação de clientes costumam ganhar força a partir do segundo e terceiro mês, conforme os dados orientam as otimizações."
+    },
+    {
+      "question": "Preciso gravar vídeos ou aparecer?",
+      "answer": "Não. Nossa equipe cuida da captação, em horas definidas no plano. Você só precisa liberar o acesso ao seu espaço e aos seus produtos."
+    },
+    {
+      "question": "Como funciona a aprovação dos conteúdos?",
+      "answer": "Enviamos em lote, com prazo de aprovação e quantidade de revisões definidos em contrato. Depois de aprovado, tudo é agendado."
+    },
+    {
+      "question": "Quando a produção começa?",
+      "answer": "Após a assinatura do contrato e o pagamento conforme combinado. Em seguida vem o onboarding, com briefing e solicitação de materiais e acessos."
+    },
+    {
+      "question": "Posso pedir algo fora do plano?",
+      "answer": "Sim. O que estiver fora do escopo contratado recebe um orçamento adicional, sempre aprovado antes de executarmos."
+    },
+    {
+      "question": "Vocês atendem fora da minha cidade?",
+      "answer": "Atendemos remotamente em todo o Brasil. Captações presenciais dependem de deslocamento, combinado previamente."
+    }
+  ]
+}

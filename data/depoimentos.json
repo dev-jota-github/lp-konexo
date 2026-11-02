@@ -1,0 +1,22 @@
+{
+  "depoimentos": [
+    {
+      "quote": "“Pela primeira vez sei exatamente o que cada real investido me devolve. O relatório é claro e a equipe entrega no dia combinado.”",
+      "author": "Dra. Marina Alves",
+      "company": "Aura Odontologia",
+      "photoSlot": "foto-cliente-marina"
+    },
+    {
+      "quote": "“Os reels mudaram a cara da pizzaria. O telefone passou a tocar mais e o Google virou nossa maior vitrine.”",
+      "author": "Rafael Teixeira",
+      "company": "Forno & Fogo",
+      "photoSlot": "foto-cliente-rafael"
+    },
+    {
+      "quote": "“Eu não preciso mais pensar no que postar. Eles planejam, gravam, agendam e ainda explicam o que funcionou.”",
+      "author": "Camila Duarte",
+      "company": "Vértice Pilates",
+      "photoSlot": "foto-cliente-camila"
+    }
+  ]
+}

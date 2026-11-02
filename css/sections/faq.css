@@ -1,0 +1,75 @@
+/* ============================================================
+   FAQ SECTION
+   ============================================================ */
+.faq__list {
+  margin-top: 3rem;
+  border-top: 1px solid var(--line);
+  max-width: 900px;
+}
+
+.faq__item {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq__q {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: left;
+  padding: 1.7rem .4rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  letter-spacing: -.02em;
+  min-height: 44px;
+}
+
+.faq__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .4s var(--ease);
+}
+
+.faq__icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.faq__item.is-open .faq__icon {
+  background: var(--volt);
+  color: var(--volt-ink);
+  border-color: var(--volt);
+  transform: rotate(45deg);
+}
+
+.faq__a {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .5s var(--ease);
+}
+
+.faq__a > div {
+  overflow: hidden;
+}
+
+.faq__a p {
+  color: var(--muted);
+  padding: 0 .4rem 1.7rem;
+  max-width: 62ch;
+}
+
+.faq__item.is-open .faq__a {
+  grid-template-rows: 1fr;
+}
+
+html:not(.js) .faq__a {
+  grid-template-rows: 1fr;
+}

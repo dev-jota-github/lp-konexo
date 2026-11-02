@@ -1,0 +1,49 @@
+/* ============================================================
+   PRELOADER
+   ============================================================ */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.preloader__logo {
+  width: 180px;
+}
+
+.preloader__logo .draw {
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+}
+
+.preloader__count {
+  position: absolute;
+  bottom: 2.5rem;
+  right: var(--gutter);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  letter-spacing: -.04em;
+  color: var(--ink-3);
+  -webkit-text-stroke: 1px var(--line);
+}
+
+.preloader__tag {
+  position: absolute;
+  bottom: 3rem;
+  left: var(--gutter);
+  color: var(--muted);
+  font-size: var(--fs-small);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+html:not(.js) .preloader {
+  display: none;
+}
