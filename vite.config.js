@@ -1,8 +1,11 @@
 import { defineConfig } from 'vite';
 
+const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+
 export default defineConfig({
   root: '.',
   publicDir: 'public',
+  base: isGitHubPages ? '/lp-konexo/' : '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
