@@ -5,15 +5,14 @@
  * ============================================================
  */
 import { $ } from '../utils/dom.js';
+import { fetchNumeros } from '../utils/data-fetcher.js';
 
 export async function initNumerosRenderer() {
   const grid = $('.numeros__grid');
   if (!grid) return;
 
   try {
-    const response = await fetch('./data/numeros.json');
-    if (!response.ok) throw new Error('Failed to load numeros');
-    const data = await response.json();
+    const data = await fetchNumeros();
 
     grid.innerHTML = data.numeros.map(num => `
       <div class="num" data-fade>

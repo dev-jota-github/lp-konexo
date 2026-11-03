@@ -7,15 +7,16 @@
 import { $, $$ } from '../utils/dom.js';
 import { CONFIG } from '../config/config.js';
 import { submitDiagnostic } from '../utils/supabase.js';
+import { ANIMATION, SELECTORS } from '../utils/constants.js';
 
 export function initForm() {
-  const form = $('#diagForm');
+  const form = $(SELECTORS.FORM);
   if (!form) return;
 
-  const wppInput = $('#f-wpp');
-  const submitBtn = $('#formSubmit');
-  const successEl = $('#formSuccess');
-  const againBtn = $('#formAgain');
+  const wppInput = $(SELECTORS.WHATSAPP_INPUT);
+  const submitBtn = $(SELECTORS.SUBMIT_BTN);
+  const successEl = $(SELECTORS.SUCCESS_EL);
+  const againBtn = $(SELECTORS.AGAIN_BTN);
 
   // Phone mask: (00) 00000-0000
   if (wppInput) {
@@ -121,6 +122,6 @@ export function initForm() {
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" width="18" height="18">
           <path d="M4 12h15m0 0-6-6m6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>`;
-    }, 700);
+    }, ANIMATION.FORM_SUCCESS_DELAY);
   });
 }

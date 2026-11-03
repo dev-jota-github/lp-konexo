@@ -15,7 +15,7 @@ export function initFooterParallax() {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.fromTo(footerWord,
+  const st = gsap.fromTo(footerWord,
     { yPercent: 34 },
     {
       yPercent: 10,
@@ -28,4 +28,8 @@ export function initFooterParallax() {
       }
     }
   );
+
+  return () => {
+    if (st?.scrollTrigger) st.scrollTrigger.kill();
+  };
 }

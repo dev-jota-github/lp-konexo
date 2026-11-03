@@ -5,6 +5,7 @@
  * ============================================================
  */
 import { $ } from '../utils/dom.js';
+import { fetchCases } from '../utils/data-fetcher.js';
 
 export async function initCasesRenderer() {
   const list = $('#casesList');
@@ -14,9 +15,7 @@ export async function initCasesRenderer() {
   if (!list) return;
 
   try {
-    const response = await fetch('./data/cases.json');
-    if (!response.ok) throw new Error('Failed to load cases');
-    const data = await response.json();
+    const data = await fetchCases();
 
     // Render cases
     list.innerHTML = data.cases.map(caseItem => `

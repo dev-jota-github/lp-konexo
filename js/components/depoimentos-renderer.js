@@ -5,15 +5,14 @@
  * ============================================================
  */
 import { $ } from '../utils/dom.js';
+import { fetchDepoimentos } from '../utils/data-fetcher.js';
 
 export async function initDepoimentosRenderer() {
   const track = $('#depoTrack');
   if (!track) return;
 
   try {
-    const response = await fetch('./data/depoimentos.json');
-    if (!response.ok) throw new Error('Failed to load depoimentos');
-    const data = await response.json();
+    const data = await fetchDepoimentos();
 
     track.innerHTML = data.depoimentos.map(depo => `
       <article class="depo__card" data-cursor="Arraste">

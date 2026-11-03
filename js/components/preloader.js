@@ -4,6 +4,29 @@
  * ============================================================
  */
 import { $, prefersReducedMotion } from '../utils/dom.js';
+import { STORAGE_KEYS, ANIMATION } from '../utils/constants.js';
+
+/**
+ * Safe sessionStorage getter
+ */
+function getStorageItem(key) {
+  try {
+    return sessionStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Safe sessionStorage setter
+ */
+function setStorageItem(key, value) {
+  try {
+    sessionStorage.setItem(key, value);
+  } catch {
+    // Ignore storage errors (private browsing, quota exceeded, etc.)
+  }
+}
 
 export function initPreloader(config) {
   if (!config.enablePreloader) return;
@@ -14,15 +37,12 @@ export function initPreloader(config) {
   if (!preloader || !count) return;
 
   // Check if already seen this session
-  let seen = false;
-  try {
-    seen = sessionStorage.getItem('konexo_seen') === '1';
-  } catch (e) {}
+  const seen = getStorageItem(STORAGE_KEYS.PRELOADER_SEEN) === '1';
 
   // Skip preloader if reduced motion, already seen, or no GSAP
   if (prefersReducedMotion() || seen || typeof gsap === 'undefined') {
     preloader.remove();
-    try { sessionStorage.setItem('konexo_seen', '1'); } catch (e) {}
+    setStorageItem(STORAGE_KEYS.PRELOADER_SEEN, '1');
     return;
   }
 
@@ -34,19 +54,19 @@ export function initPreloader(config) {
     onComplete: () => {
       preloader.remove();
       document.body.style.overflow = '';
-      try { sessionStorage.setItem('konexo_seen', '1'); } catch (e) {}
+      setStorageItem(STORAGE_KEYS.PRELOADER_SEEN, '1');
     }
   });
 
   tl.to('.preloader__logo .draw', {
     strokeDashoffset: 0,
-    duration: 0.9,
+    duration: ANIMATION.PRELOADER_DURATION,
     ease: 'power2.inOut',
-    stagger: 0.08
+    stagger: ANIMATION.PRELOADER_STAGGER
   })
   .to(state, {
     v: 100,
-    duration: 1.1,
+    duration: ANIMATION.PRELOADER_COUNTER_DURATION,
     ease: 'power2.inOut',
     onUpdate: () => { count.textContent = Math.round(state.v); }
   }, '<')

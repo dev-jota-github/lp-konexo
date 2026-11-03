@@ -5,6 +5,7 @@
  * ============================================================
  */
 import { $ } from '../utils/dom.js';
+import { fetchPlans } from '../utils/data-fetcher.js';
 
 export async function initPlanosRenderer() {
   const grid = $('#planosGrid');
@@ -15,9 +16,7 @@ export async function initPlanosRenderer() {
   if (!grid) return;
 
   try {
-    const response = await fetch('./data/plans.json');
-    if (!response.ok) throw new Error('Failed to load plans');
-    const data = await response.json();
+    const data = await fetchPlans();
 
     // Render plans
     grid.innerHTML = data.plans.map(plan => `

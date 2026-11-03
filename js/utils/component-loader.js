@@ -7,6 +7,7 @@
 
 /**
  * Load an HTML component into a target element
+ * Uses innerHTML to preserve the target element and any event listeners
  */
 export async function loadComponent(componentPath, targetSelector) {
   try {
@@ -16,7 +17,7 @@ export async function loadComponent(componentPath, targetSelector) {
 
     const target = document.querySelector(targetSelector);
     if (target) {
-      target.outerHTML = html;
+      target.innerHTML = html;
     }
   } catch (e) {
     console.warn(`Component loader failed for ${componentPath}:`, e);

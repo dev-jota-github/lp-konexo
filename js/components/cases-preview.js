@@ -4,6 +4,7 @@
  * ============================================================
  */
 import { $, $$, hasFinePointer, prefersReducedMotion } from '../utils/dom.js';
+import { ANIMATION } from '../utils/constants.js';
 
 export function initCasesPreview() {
   if (!hasFinePointer() || prefersReducedMotion() || typeof gsap === 'undefined') return;
@@ -17,8 +18,8 @@ export function initCasesPreview() {
 
   gsap.set(preview, { xPercent: -50, yPercent: -118 });
 
-  const moveX = gsap.quickTo(preview, 'x', { duration: 0.5, ease: 'power3' });
-  const moveY = gsap.quickTo(preview, 'y', { duration: 0.5, ease: 'power3' });
+  const moveX = gsap.quickTo(preview, 'x', { duration: ANIMATION.CASES_PREVIEW_EASE, ease: 'power3' });
+  const moveY = gsap.quickTo(preview, 'y', { duration: ANIMATION.CASES_PREVIEW_EASE, ease: 'power3' });
 
   list.addEventListener('mousemove', e => {
     moveX(e.clientX);

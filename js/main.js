@@ -13,6 +13,7 @@ import { $, $$, prefersReducedMotion, hasFinePointer, setupWhatsAppLinks } from 
 import { initSmoothScroll } from './utils/smooth-scroll.js';
 import { initScrollTriggerRefresh } from './utils/scroll-trigger-refresh.js';
 import { loadComponents } from './utils/component-loader.js';
+import { SCROLL } from './utils/constants.js';
 
 // Components
 import { initPreloader } from './components/preloader.js';
@@ -138,9 +139,9 @@ async function init() {
   initForm();
   initScrollTriggerRefresh();
 
-  // Scroll margin for fixed header
+  // Scroll margin for fixed header (uses centralized constant)
   const style = document.createElement('style');
-  style.textContent = '[id]{scroll-margin-top:96px}';
+  style.textContent = `[id]{scroll-margin-top:${SCROLL.SCROLL_MARGIN_TOP}px}`;
   document.head.appendChild(style);
 }
 

@@ -5,6 +5,7 @@
  * ============================================================
  */
 import { $, $$ } from '../utils/dom.js';
+import { ANIMATION } from '../utils/constants.js';
 
 export function initDepoimentos() {
   const track = $('#depoTrack');
@@ -15,17 +16,17 @@ export function initDepoimentos() {
   let startX = 0;
   let scrollLeft = 0;
 
-  track.addEventListener('pointerdown', e => {
+  const onPointerDown = e => {
     if (e.pointerType !== 'mouse') return;
     isDragging = true;
     startX = e.clientX;
     scrollLeft = track.scrollLeft;
     track.classList.add('is-drag');
-  });
+  };
 
-  window.addEventListener('pointermove', e => {
+  const onPointerMove = e => {
     if (isDragging) track.scrollLeft = scrollLeft - (e.clientX - startX);
-  });
+  };
 
   const endDrag = () => {
     if (!isDragging) return;
@@ -33,6 +34,8 @@ export function initDepoimentos() {
     track.classList.remove('is-drag');
   };
 
+  track.addEventListener('pointerdown', onPointerDown);
+  window.addEventListener('pointermove', onPointerMove);
   window.addEventListener('pointerup', endDrag);
   window.addEventListener('pointercancel', endDrag);
   track.addEventListener('dragstart', e => e.preventDefault());
@@ -46,4 +49,12 @@ export function initDepoimentos() {
       track.scrollBy({ left: step * Number(btn.dataset.dir), behavior: 'smooth' });
     });
   });
+
+  // Return cleanup function for proper disposal
+  return () => {
+    track.removeEventListener('pointerdown', onPointerDown);
+    window.removeEventListener('pointermove', onPointerMove);
+    window.removeEventListener('pointerup', endDrag);
+    window.removeEventListener('pointercancel', endDrag);
+  };
 }

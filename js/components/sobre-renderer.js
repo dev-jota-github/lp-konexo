@@ -5,6 +5,7 @@
  * ============================================================
  */
 import { $ } from '../utils/dom.js';
+import { fetchTeam } from '../utils/data-fetcher.js';
 
 export async function initSobreRenderer() {
   const teamContainer = $('#sobreTeam');
@@ -13,9 +14,7 @@ export async function initSobreRenderer() {
   if (!teamContainer || !valoresGrid) return;
 
   try {
-    const response = await fetch('./data/team.json');
-    if (!response.ok) throw new Error('Failed to load team data');
-    const data = await response.json();
+    const data = await fetchTeam();
 
     // Render team
     teamContainer.innerHTML = data.team.map(member => `

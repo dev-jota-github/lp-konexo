@@ -6,8 +6,10 @@
 import { $, $$, scrollToTarget } from '../utils/dom.js';
 
 export function initPlanSelect() {
-  $$('[data-plan]').forEach(btn => {
-    btn.addEventListener('click', () => {
+  const buttons = $$('[data-plan]');
+
+  const handlers = buttons.map(btn => {
+    const onClick = () => {
       const select = $('#f-interesse');
       if (select) select.value = btn.getAttribute('data-plan');
 
@@ -17,6 +19,10 @@ export function initPlanSelect() {
         const nomeInput = $('#f-nome');
         if (nomeInput) nomeInput.focus({ preventScroll: true });
       }, 900);
-    });
+    };
+    btn.addEventListener('click', onClick);
+    return () => btn.removeEventListener('click', onClick);
   });
+
+  return () => handlers.forEach(cleanup => cleanup());
 }

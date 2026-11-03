@@ -19,11 +19,15 @@ export function initMarquee() {
 
   let prevY = window.scrollY;
 
-  window.addEventListener('scroll', () => {
+  const onScroll = () => {
     const y = window.scrollY;
     if (Math.abs(y - prevY) > 4) {
       wrap.classList.toggle('marquee--reverse', y < prevY);
     }
     prevY = y;
-  }, { passive: true });
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  return () => window.removeEventListener('scroll', onScroll);
 }

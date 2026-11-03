@@ -4,6 +4,8 @@
  * Refresh ScrollTrigger after fonts load and on window load
  * ============================================================
  */
+import { ANIMATION } from './constants.js';
+
 export function initScrollTriggerRefresh() {
   if (typeof ScrollTrigger === 'undefined') return;
 
@@ -15,6 +17,6 @@ export function initScrollTriggerRefresh() {
   // Refresh on window load
   window.addEventListener('load', () => ScrollTrigger.refresh());
 
-  // Extra refresh after a delay
-  setTimeout(() => ScrollTrigger.refresh(), 1500);
+  // Extra refresh after a delay (centralized constant)
+  setTimeout(() => ScrollTrigger.refresh(), ANIMATION.SCROLL_TRIGGER_REFRESH_DELAY);
 }

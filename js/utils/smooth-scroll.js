@@ -4,6 +4,7 @@
  * ============================================================
  */
 import { $, $$, scrollToTarget } from './dom.js';
+import { ARIA } from '../utils/constants.js';
 
 export function initSmoothScroll() {
   document.addEventListener('click', e => {
@@ -27,8 +28,8 @@ export function initSmoothScroll() {
     if (menu?.classList.contains('is-open')) {
       menu.classList.remove('is-open');
       burger?.classList.remove('is-open');
-      burger?.setAttribute('aria-expanded', 'false');
-      burger?.setAttribute('aria-label', 'Abrir menu');
+      burger?.setAttribute('aria-expanded', ARIA.EXPANDED_FALSE);
+      burger?.setAttribute('aria-label', ARIA.LABEL_OPEN_MENU);
       if (window.lenis) window.lenis.start();
     }
 

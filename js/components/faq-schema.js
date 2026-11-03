@@ -4,15 +4,14 @@
  * Generates JSON-LD structured data for FAQPage from data/faq.json
  * ============================================================
  */
+import { fetchFAQ } from '../utils/data-fetcher.js';
 
 export async function initFAQSchema() {
   const schemaEl = document.getElementById('faqSchema');
   if (!schemaEl) return;
 
   try {
-    const response = await fetch('./data/faq.json');
-    if (!response.ok) throw new Error('Failed to load FAQ for schema');
-    const data = await response.json();
+    const data = await fetchFAQ();
 
     const schema = {
       '@context': 'https://schema.org',

@@ -19,11 +19,13 @@ export function initReveals() {
   // Register ScrollTrigger
   gsap.registerPlugin(ScrollTrigger);
 
+  const triggers = [];
+
   // Word-by-word reveal for [data-split] elements
   $$('[data-split]').forEach(heading => {
     const words = heading.querySelectorAll('.wi');
     if (words.length) {
-      gsap.to(words, {
+      const anim = gsap.to(words, {
         y: 0,
         duration: 1.1,
         ease: 'power4.out',
@@ -34,12 +36,13 @@ export function initReveals() {
           once: true
         }
       });
+      if (anim.scrollTrigger) triggers.push(anim.scrollTrigger);
     }
   });
 
   // Fade-in for [data-fade] elements
   $$('[data-fade]').forEach(el => {
-    gsap.to(el, {
+    const anim = gsap.to(el, {
       opacity: 1,
       y: 0,
       duration: 1,
@@ -50,5 +53,10 @@ export function initReveals() {
         once: true
       }
     });
+    if (anim.scrollTrigger) triggers.push(anim.scrollTrigger);
   });
+
+  return () => {
+    triggers.forEach(st => st.kill());
+  };
 }

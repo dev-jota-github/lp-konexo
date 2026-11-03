@@ -19,4 +19,6 @@ export function initWppFloat() {
   }, { threshold: 0.2 });
 
   observer.observe(hero);
+
+  return () => observer.disconnect();
 }

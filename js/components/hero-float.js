@@ -4,6 +4,7 @@
  * ============================================================
  */
 import { $, $$, prefersReducedMotion } from '../utils/dom.js';
+import { ANIMATION } from '../utils/constants.js';
 
 export function initHeroFloat() {
   if (prefersReducedMotion() || typeof gsap === 'undefined') return;
@@ -26,7 +27,7 @@ export function initHeroFloat() {
     if (heroStage && typeof ScrollTrigger !== 'undefined') {
       gsap.registerPlugin(ScrollTrigger);
       gsap.to(heroStage, {
-        y: -60,
+        y: ANIMATION.HERO_FLOAT_Y,
         ease: 'none',
         scrollTrigger: {
           trigger: '#hero',

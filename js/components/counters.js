@@ -4,6 +4,7 @@
  * ============================================================
  */
 import { $$, prefersReducedMotion } from '../utils/dom.js';
+import { ANIMATION } from '../utils/constants.js';
 
 export function initCounters() {
   const counters = $$('[data-count]');
@@ -15,7 +16,7 @@ export function initCounters() {
       const obj = { v: 0 };
       gsap.to(obj, {
         v: end,
-        duration: 1.8,
+        duration: ANIMATION.COUNTER_DURATION,
         ease: 'power2.out',
         onUpdate: () => { el.textContent = Math.round(obj.v); }
       });

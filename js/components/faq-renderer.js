@@ -5,15 +5,15 @@
  * ============================================================
  */
 import { $ } from '../utils/dom.js';
+import { initFAQ } from './faq.js';
+import { fetchFAQ } from '../utils/data-fetcher.js';
 
 export async function initFAQRenderer() {
   const list = $('#faqList');
   if (!list) return;
 
   try {
-    const response = await fetch('./data/faq.json');
-    if (!response.ok) throw new Error('Failed to load FAQ');
-    const data = await response.json();
+    const data = await fetchFAQ();
 
     list.innerHTML = data.faq.map((item, index) => `
       <div class="faq__item">
@@ -32,32 +32,4 @@ export async function initFAQRenderer() {
   } catch (e) {
     console.warn('FAQ renderer failed:', e);
   }
-}
-
-// FAQ accordion logic (duplicated here to avoid circular dependency)
-function initFAQ() {
-  document.querySelectorAll('.faq__item').forEach(item => {
-    const btn = item.querySelector('.faq__q');
-    if (!btn) return;
-
-    btn.addEventListener('click', () => {
-      const isOpen = item.classList.contains('is-open');
-
-      document.querySelectorAll('.faq__item.is-open').forEach(other => {
-        if (other !== item) {
-          other.classList.remove('is-open');
-          const otherBtn = other.querySelector('.faq__q');
-          if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-        }
-      });
-
-      if (!isOpen) {
-        item.classList.add('is-open');
-        btn.setAttribute('aria-expanded', 'true');
-      } else {
-        item.classList.remove('is-open');
-        btn.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
 }

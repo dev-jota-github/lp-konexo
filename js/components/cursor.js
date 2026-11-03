@@ -4,6 +4,7 @@
  * ============================================================
  */
 import { $, $$, hasFinePointer, prefersReducedMotion } from '../utils/dom.js';
+import { ANIMATION } from '../utils/constants.js';
 
 export function initCursor(config) {
   if (!config.enableCursor) return;
@@ -25,8 +26,8 @@ export function initCursor(config) {
   }, { passive: true });
 
   function loop() {
-    cx += (tx - cx) * 0.2;
-    cy += (ty - cy) * 0.2;
+    cx += (tx - cx) * ANIMATION.CURSOR_EASE;
+    cy += (ty - cy) * ANIMATION.CURSOR_EASE;
     cursor.style.transform = `translate(${cx - cursor.offsetWidth / 2}px, ${cy - cursor.offsetHeight / 2}px)`;
     requestAnimationFrame(loop);
   }
