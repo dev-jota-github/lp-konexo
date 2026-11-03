@@ -23,11 +23,14 @@ function getSupabaseClient() {
   }
 
   try {
+    // Normalize URL: remove trailing /rest/v1/ if present to avoid double path
+    const normalizedUrl = SUPABASE_URL.replace(/\/rest\/v1\/?$/, '');
+
     // Using native fetch to avoid bundling the full Supabase JS client
     // We only need a simple insert, so a minimal wrapper is enough
     supabaseClient = {
       from(table) {
-        const baseUrl = `${SUPABASE_URL}/rest/v1/${table}`;
+        const baseUrl = `${normalizedUrl}/rest/v1/${table}`;
 
         return {
           async insert(data) {
