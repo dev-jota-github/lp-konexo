@@ -26,7 +26,7 @@ function getSupabaseClient() {
     // Using native fetch to avoid bundling the full Supabase JS client
     // We only need a simple insert, so a minimal wrapper is enough
     supabaseClient = {
-      async from(table) {
+      from(table) {
         const baseUrl = `${SUPABASE_URL}/rest/v1/${table}`;
 
         return {
