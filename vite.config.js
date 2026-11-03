@@ -16,11 +16,23 @@ const copyDataPlugin = {
   }
 };
 
+// Plugin to copy components folder to dist
+const copyComponentsPlugin = {
+  name: 'copy-components',
+  closeBundle() {
+    const src = path.resolve(__dirname, 'components');
+    const dest = path.resolve(__dirname, 'dist/components');
+    if (fs.existsSync(src)) {
+      fs.cpSync(src, dest, { recursive: true });
+    }
+  }
+};
+
 export default defineConfig({
   root: '.',
   publicDir: 'public',
   base: isGitHubPages ? '/lp-konexo/' : '/',
-  plugins: [copyDataPlugin],
+  plugins: [copyDataPlugin, copyComponentsPlugin],
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
