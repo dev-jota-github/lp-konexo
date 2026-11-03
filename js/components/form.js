@@ -1,12 +1,11 @@
 /**
  * ============================================================
  * DIAGNÓSTICO FORM
- * Validation, WhatsApp submission, Supabase save, success state
+ * Validation, WhatsApp submission, success state
  * ============================================================
  */
 import { $, $$ } from '../utils/dom.js';
 import { CONFIG } from '../config/config.js';
-import { submitDiagnostic } from '../utils/supabase.js';
 
 export function initForm() {
   const form = $('#diagForm');
@@ -101,11 +100,6 @@ export function initForm() {
       'Instagram/Site: ' + (formData.instagram || '—') + '\n' +
       'Interesse: ' + formData.interesse + '\n' +
       'Investimento mensal: ' + formData.investimento;
-
-    // Save to Supabase (non-blocking - don't wait for it)
-    submitDiagnostic(formData).catch(err => {
-      console.warn('[Form] Supabase save failed (non-blocking):', err);
-    });
 
     // Open WhatsApp within user gesture (avoids popup blocker)
     window.open(
