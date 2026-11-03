@@ -1,11 +1,26 @@
 import { defineConfig } from 'vite';
+import fs from 'fs';
+import path from 'path';
 
 const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+
+// Plugin to copy data folder to dist
+const copyDataPlugin = {
+  name: 'copy-data',
+  closeBundle() {
+    const src = path.resolve(__dirname, 'data');
+    const dest = path.resolve(__dirname, 'dist/data');
+    if (fs.existsSync(src)) {
+      fs.cpSync(src, dest, { recursive: true });
+    }
+  }
+};
 
 export default defineConfig({
   root: '.',
   publicDir: 'public',
   base: isGitHubPages ? '/lp-konexo/' : '/',
+  plugins: [copyDataPlugin],
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
